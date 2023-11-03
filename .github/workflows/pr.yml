@@ -21,7 +21,8 @@ jobs:
           # Default: 1
           fetch-depth: '0'
           # This is to get the PR code instead of the repo code
-          ref: ${{ github.event.workflow_run.head_branch }}
+          #ref: ${{ github.event.workflow_run.head_branch }}
+          ref: ${{ github.event.workflow_run.head_sha }}
 
       # Runs a single command using the runners shell
       - name: Cat pr.yml 
