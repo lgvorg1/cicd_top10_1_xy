@@ -17,6 +17,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Runs a single command using the runners shell
+      - name: Cat pr.yml 
+        run: cat README.md
+
       # Simulation of a compilation
       - name: Building ... 
         run: |

