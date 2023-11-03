@@ -38,7 +38,7 @@ jobs:
           echo "run_tests=OK" >> $GITHUB_OUTPUT
           
       #
-      # For demo purposes, the check merge condition will always be set to FALSE (avoiding to merge)
+      # For demo purposes, the check merge condition will always be set to FALSE (avoiding to merge) 
       #
       - name: pr_check_conditions_to_merge
         id: check_pr
