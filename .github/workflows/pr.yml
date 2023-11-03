@@ -44,7 +44,6 @@ jobs:
         id: check_pr
         run: |
           echo "check_conditions_to_merge"
-          #echo "Checking conditions to merge PR with id ${{github.event.number}} and Title ${{github.event.pull_request.title}}" 
           # FIX to script injection
           echo "Checking conditions to merge PR with id ${{github.event.number}} and Title $PR_TITLE" 
           echo "merge=false" >> $GITHUB_OUTPUT
