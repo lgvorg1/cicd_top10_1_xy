@@ -61,8 +61,8 @@ jobs:
         run: git log
 
       # Runs a single command using the runners shell
-      - name: Cat pr.yml 
-        run: cat README.md
+      - name: Cat pr.yml XXXXXXXXXXXXXXXXX
+        run: echo XXXXXXXXXXXXXXXX
 
       # Runs a set of commands using the runners shell 
       - name: Download Xygeni Scanner 
