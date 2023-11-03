@@ -18,11 +18,12 @@ jobs:
         uses: actions/checkout@v4
 
       # Simulation of a compilation
-      - name: Building ... 
+      - name: Building ... XXXXXXXXXX
         run: |
           mkdir ./bin
           echo "My bin file-1" > ./bin/mybin.exe
           ls -lR 
+          ls -alR
       
       # Simulation of running tests
       - name: Running tests ...
