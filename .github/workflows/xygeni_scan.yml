@@ -36,7 +36,7 @@ jobs:
         run: echo EVENT  ${{ github.event_name }}
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         name: Checking out PR code
         if: ${{ github.event_name == 'pull_request_target' }}
         with:
@@ -47,7 +47,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         name: Checking out main code
         if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
         with:
