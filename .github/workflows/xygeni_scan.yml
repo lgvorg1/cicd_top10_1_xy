@@ -78,6 +78,6 @@ jobs:
         run: |
           echo Executing Xygeni scan ....    
           #${GITHUB_WORKSPACE}/scanner/xygeni scan --fail-on=misconf:critical --no-conf-download -n ${{ env.XY_PRJ_NAME }} --dir ${GITHUB_WORKSPACE} -e **/scanner/**
-          ${GITHUB_WORKSPACE}/scanner/xygeni scan --fail-on=critical --run="inventory,misconf,codetamper"--no-conf-download -n ${{ env.XY_PRJ_NAME }} --dir ${GITHUB_WORKSPACE} -e **/scanner/**
+          ${GITHUB_WORKSPACE}/scanner/xygeni scan --fail-on=critical --run="inventory,misconf,codetamper" --no-conf-download -n ${{ env.XY_PRJ_NAME }} --dir ${GITHUB_WORKSPACE} -e **/scanner/**
         env:
           GITHUB_PAT: ${{ secrets.GH_PAT }}
