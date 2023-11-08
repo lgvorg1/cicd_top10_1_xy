@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Xygeni Scanner on pr target (CMD)
+name: Xygeni Scanner on pr target
 
 # Controls when the workflow will run
 on:
@@ -14,10 +14,10 @@ on:
   workflow_dispatch:
  
 env:
-  XY_USERNAME: ${{ secrets.XY_USERNAME_PRO }}
-  XY_PASSWORD: ${{ secrets.XY_PASSWORD_PRO }}
-  XY_URL: ${{ secrets.XY_URL_PRO }}
-  XY_PRJ_NAME: LGV-GH-${{ github.event.repository.name }}-CMD
+  XY_USERNAME: ${{ secrets.XY_USERNAME_DEMO }}
+  XY_PASSWORD: ${{ secrets.XY_PASSWORD_DEMO }}
+  XY_URL: ${{ secrets.XY_URL_DEMO }}
+  XY_PRJ_NAME: LGV-GH-${{ github.event.repository.name }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel 
 jobs:

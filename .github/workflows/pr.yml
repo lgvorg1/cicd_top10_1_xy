@@ -2,7 +2,7 @@ name: PR CI
 
 on:
   workflow_run: 
-    workflows: [ 'Xygeni Scanner on pr target (CMD)' ]
+    workflows: [ 'Xygeni Scanner on pr target' ]
     types: [completed]
 
 env:
@@ -32,7 +32,7 @@ jobs:
       - name: Building ... 
         run: |
           mkdir ./bin
-          echo "My bin file-1" > ./bin/mybin.exe
+          touch ./bin/mybin.exe
           ls -lR 
       
       # Simulation of running tests
@@ -41,7 +41,7 @@ jobs:
         run: |
           echo Running tests..
           chmod +x runtests.sh
-          ./runtests.sh
+          ./runtests.sh "${{ github.event.pull_request.user.login }}" "${{ github.workflow }}"
           export ret_value=$?
           echo ret_value $ret_value
           cat runtests.out
@@ -82,25 +82,5 @@ jobs:
                   https://api.github.com/repos/lgvorg1/"${{github.event.repository.name}}"/pulls/"$PR_ID"/merge \
                   -d '{"commit_title":"Expand enum","commit_message":"Add a new value to the merge_method enum"}'
           
-      #- name: Archive building artifacts
-      #  uses: actions/upload-artifact@v3
-      #  with:
-      #    name: archive-bin
-      #    path: |
-      #      bin
 
-      #- name: Archive code coverage results
-      #  uses: actions/upload-artifact@v3
-      #  with:
-      #    name: archive-output
-      #    path: output/output.txt
-
-      #- uses: actions/download-artifact@v3
-      #  with:
-      #    name: archive-dist
-      #    path: path/to/artifact
-
-      #- name: Display structure of downloaded files
-      #  run: ls -R
-      #  working-directory: path/to/artifact
 
