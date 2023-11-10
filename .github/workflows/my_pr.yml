@@ -1,4 +1,4 @@
-name: PR TARGET CI
+name: PR MY NEW CI
 
 on: 
   pull_request: 
