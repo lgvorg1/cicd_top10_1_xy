@@ -2,7 +2,7 @@ name: PR CI
 
 on:
   workflow_run: 
-    workflows: [ 'Xygeni Scanner on pr target' ]
+    workflows: [ 'Xygeni CI/CD Security Scan' ]
     types: [completed]
 
 env:
