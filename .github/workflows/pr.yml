@@ -13,8 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
+      
+      # checkout base code for shell script
+      - name: Checkout PR code
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            runtests.sh
+          sparse-checkout-cone-mode: false
+
+
       # checkout PR code
-      - name: Checkout repository
+      - name: Checkout PR code
         uses: actions/checkout@v4
         with:
           # Number of commits to fetch. 0 indicates all history for all branches and tags.
@@ -23,6 +33,7 @@ jobs:
           # This is to get the PR code instead of the repo code
           #ref: ${{ github.event.workflow_run.head_branch }}
           ref: ${{ github.event.workflow_run.head_sha }}
+          path: pr_code
 
       # Runs a single command using the runners shell
       - name: Cat pr.yml 
@@ -33,7 +44,11 @@ jobs:
         run: |
           mkdir ./bin
           touch ./bin/mybin.exe
-          ls -lR 
+          echo "cat runtests.sh"
+          cat runtests.sh
+          echo "cat ./pr_code/runtests.sh"
+          cat ./pr_code/runtests.sh
+
       
       # Simulation of running tests
       - name: Running tests ...
