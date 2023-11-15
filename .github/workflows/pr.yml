@@ -15,7 +15,7 @@ jobs:
     steps:
       
       # checkout base code for shell script
-      - name: Checkout PR code
+      - name: Checkout base code for shell script
         uses: actions/checkout@v4
         with:
           sparse-checkout: |
